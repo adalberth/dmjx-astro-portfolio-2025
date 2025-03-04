@@ -1,9 +1,0 @@
----
-const {img, text, buttonColor, href} = Astro.props
-const buttonClasses = 'rounded py-2 px-4 ' + (buttonColor || 'bg-red-300')
----
-<div class="p-4 border inline-block">
-    <img src={img} alt="" class="rounded">
-    <p class="my-4 text-2xl">{text}</p>
-    <a href={href} class={buttonClasses}>See more</a>
-</div>
