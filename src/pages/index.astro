@@ -1,8 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+<script>
+    import gsap from 'gsap';
+    document.querySelector('.box')?.addEventListener('click', () => {
+        gsap.to(".box", {
+            duration: 10,
+            x: '500px',
+            y: 100
+        });
+    })
+</script>
 <Layout>
-    <div class="text-center p-4">
-        <p>Index</p>
+
+
+    <img src="https://www.shutterstock.com/image-photo/passenger-rail-train-car-isolated-260nw-2452675437.jpg" class="box object-cover w-24 border">
+
+    <!-- <img src="/images/a.jpg"  alt="">
+    <img src="/images/b.jpg" alt=""> -->
+
+
+    <!-- <div class="bg-blue-500/50 p-4 relative z-0">
+        <div class="w-24 h-24 bg-primary  inline-block"></div>
+
+        <div class="w-24 h-24 bg-secondary inline-block absolute top-1/2 left-1/2"></div>
+
+        <div class="w-30 h-30 bg-tertiary inline-block"></div>
     </div>
+    <div class="bg-purple-500/50 p-4 relative z-0">
+        <div class="w-24 h-24 bg-primary  inline-block"></div>
+
+        <div class="w-24 h-24 bg-secondary inline-block absolute top-1/2 left-1/2"></div>
+
+        <div class="w-30 h-30 bg-tertiary inline-block"></div>
+    </div> -->
 </Layout>
