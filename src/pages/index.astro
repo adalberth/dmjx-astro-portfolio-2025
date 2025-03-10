@@ -2,22 +2,68 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <script>
-    import gsap from 'gsap';
-    document.querySelector('.box')?.addEventListener('click', () => {
-        gsap.to(".box", {
-            duration: 10,
-            x: '500px',
-            y: 100
-        });
-    })
+    // import gsap from 'gsap';
+    // document.querySelector('.box')?.addEventListener('click', () => {
+    //     gsap.to(".box", {
+    //         duration: 10,
+    //         x: '500px',
+    //         y: 100
+    //     });
+    // })
 </script>
 <Layout>
 
+    <div class="grid sm:grid-cols-3">
+        {new Array(10).fill(null).map((_, i) => {
+            return (<div class="bg-red-100 border">{i}</div>)
+        })}
+    </div>
 
-    <img src="https://www.shutterstock.com/image-photo/passenger-rail-train-car-isolated-260nw-2452675437.jpg" class="box object-cover w-24 border">
 
-    <!-- <img src="/images/a.jpg"  alt="">
-    <img src="/images/b.jpg" alt=""> -->
+    <div class="container">
+        <div class="h-24 bg-amber-300" style="grid-area: header;">
+            Header
+        </div>
+        <div class="h-24 bg-red-300" style="grid-area: main;">
+            Main
+        </div>
+        <div class="h-24 bg-slate-300" style="grid-area: sidebar;">
+            Sidebar
+        </div>
+        <div class="h-24 bg-green-300" style="grid-area: footer;">
+            Footer
+        </div>
+    </div>
+    <style>
+        .container {
+            background-color: purple;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas:
+                "header header header header"
+                "main main . sidebar"
+                "footer footer footer footer";
+        }
+        @media (max-width: 512px) {
+            .container{
+                background-color: red;
+                grid-template-areas:
+                "header header sidebar sidebar"
+                "main main footer footer";
+            }
+        }
+    </style>
+
+    <!-- <img src="https://www.shutterstock.com/image-photo/passenger-rail-train-car-isolated-260nw-2452675437.jpg" class="box object-cover w-24 border"> -->
+
+    <div class="w-24 h-48 bg-primary">
+
+        <img src="/images/a.jpg"  alt="" class="w-full h-full object-cover border">
+    </div>
+
+
+    <!-- <img src="/images/b.jpg" alt=""> -->
 
 
     <!-- <div class="bg-blue-500/50 p-4 relative z-0">
